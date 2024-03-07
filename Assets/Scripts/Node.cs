@@ -31,6 +31,9 @@ public class Node : MonoBehaviour
             return;
         }
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        //can i check the type if its the standard turret or the missile launcher
+
+
 
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }

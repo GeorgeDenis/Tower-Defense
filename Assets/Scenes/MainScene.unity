@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190533, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_Name
-      value: StandardTurretItem (1)
+      value: MissileLauncherTurret
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190534, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -405,6 +405,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8179738026400190585, guid: 6f93913c79136164ca336b57191e0755, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e0998767d9ffcc40bec1b5048455205, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f93913c79136164ca336b57191e0755, type: 3}
 --- !u!1001 &44151043
@@ -965,7 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 8391434496279449722, guid: a4b651c9aa359c348b2df2f8e8c0735b, type: 3}
-  anotherTurretPrefab: {fileID: 8391434496279449722, guid: 059992e615a62ee43a48c062a1ea0342, type: 3}
+  missileLauncherPrefab: {fileID: 5733685669431173870, guid: 8ba60bb632617474f9012be19aea6d39, type: 3}
 --- !u!1 &147569721
 GameObject:
   m_ObjectHideFlags: 0
