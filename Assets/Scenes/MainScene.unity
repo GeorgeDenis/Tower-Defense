@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190534, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMissileLauncher
+      value: SelectMissileLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190534, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 134325654}
   - component: {fileID: 134325653}
   - component: {fileID: 134325655}
+  - component: {fileID: 134325656}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -970,6 +971,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 8391434496279449722, guid: a4b651c9aa359c348b2df2f8e8c0735b, type: 3}
   missileLauncherPrefab: {fileID: 5733685669431173870, guid: 8ba60bb632617474f9012be19aea6d39, type: 3}
+--- !u!114 &134325656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134325652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fe2b442ab0f03498bfdc85ee1e32ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1 &147569721
 GameObject:
   m_ObjectHideFlags: 0
@@ -14130,6 +14144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c291699a18d49b842b5e290fe0ec4146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 8391434496279449722, guid: a4b651c9aa359c348b2df2f8e8c0735b, type: 3}
+    cost: 100
+  missileLauncher:
+    prefab: {fileID: 5733685669431173870, guid: 8ba60bb632617474f9012be19aea6d39, type: 3}
+    cost: 250
 --- !u!1001 &1820758161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16041,7 +16061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190534, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseStandardTurret
+      value: SelectStandardTurret
       objectReference: {fileID: 0}
     - target: {fileID: 8179738026400190534, guid: 6f93913c79136164ca336b57191e0755, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
