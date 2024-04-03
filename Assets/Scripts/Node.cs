@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
     [Header("Optional")]
@@ -26,7 +28,7 @@ public class Node : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if(!buildManager.CanBuild)
+        if (!buildManager.CanBuild)
         {
             return;
         }
@@ -36,11 +38,11 @@ public class Node : MonoBehaviour
             return;
         }
         buildManager.BuildTurretOn(this);
-       
+
     }
     void OnMouseEnter()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
@@ -48,7 +50,15 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        rend.material.color = hoverColor;
+        if (buildManager.HasMoney)
+        {
+            Debug.Log("Intra aici");
+            rend.material.color = hoverColor;
+        }
+        else
+        {
+            rend.material.color = notEnoughMoneyColor;
+        }
     }
     void OnMouseExit()
     {
