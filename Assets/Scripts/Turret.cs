@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -8,11 +6,18 @@ namespace Assets.Scripts
     {
         public Transform target;
 
-        [Header("Attributes")]
+        [Header("General")]
 
         public float range = 15f;
+
+        [Header("Use Bullets (default)")]
+        public GameObject bulletPrefab;
         public float fireRate = 1f;
         private float fireCountdown = 0f;
+
+        [Header("Use Laser")]
+        public bool useLaser = false;
+        public LineRenderer lineRenderer;
 
 
         [Header("Unity Setup Fields")]
@@ -22,7 +27,6 @@ namespace Assets.Scripts
         public Transform partToRotate;
         public float turnSpeed = 10f;
 
-        public GameObject bulletPrefab;
         public Transform firePoint;
 
 
@@ -59,20 +63,30 @@ namespace Assets.Scripts
         {
             if (target == null)
             {
+                if (useLaser)
+                {
+                    if (lineRenderer.enabled)
+                    {
+                        lineRenderer.enabled = false;
+                    }
+                }
                 return;
             }
-            Vector3 dir = target.position - transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-            if (fireCountdown <= 0f)
+            LockOnTarget();
+            if (useLaser)
             {
-                Shoot();
-                fireCountdown = 1f / fireRate;
+                Laser();
             }
-            fireCountdown -= Time.deltaTime;
-
+            else
+            {
+                if (fireCountdown <= 0f)
+                {
+                    Shoot();
+                    fireCountdown = 1f / fireRate;
+                }
+                fireCountdown -= Time.deltaTime;
+            }
         }
         void Shoot()
         {
@@ -87,6 +101,21 @@ namespace Assets.Scripts
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, range);
+        }
+        void LockOnTarget()
+        {
+            Vector3 dir = target.position - transform.position;
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        }
+        void Laser()
+        {
+            if (!lineRenderer.enabled) { 
+                lineRenderer.enabled = true;
+            }
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(1, target.position);
         }
     }
 }

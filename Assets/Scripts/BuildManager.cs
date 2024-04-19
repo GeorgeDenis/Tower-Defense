@@ -1,6 +1,3 @@
-using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
@@ -16,10 +13,6 @@ public class BuildManager : MonoBehaviour
         }
         instance = this;
     }
-
-    public GameObject standardTurretPrefab;
-
-    public GameObject missileLauncherPrefab;
 
     private TurretBlueprint turretToBuild;
 
