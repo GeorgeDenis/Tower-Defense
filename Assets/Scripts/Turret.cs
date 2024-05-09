@@ -4,7 +4,8 @@ namespace Assets.Scripts
 {
     public class Turret : MonoBehaviour
     {
-        public Transform target;
+        private Transform target;
+        private Enemy targetEnemy;
 
         [Header("General")]
 
@@ -17,7 +18,12 @@ namespace Assets.Scripts
 
         [Header("Use Laser")]
         public bool useLaser = false;
+        public ParticleSystem impactEffect;
         public LineRenderer lineRenderer;
+        public Light impactLight;
+        public int damageOverTime = 30;
+        public float slowAmount = .5f;
+
 
 
         [Header("Unity Setup Fields")]
@@ -52,6 +58,7 @@ namespace Assets.Scripts
             if (nearestEnemy != null && shortestDistance <= range)
             {
                 target = nearestEnemy.transform;
+                targetEnemy = nearestEnemy.GetComponent<Enemy>();
             }
             else
             {
@@ -68,6 +75,8 @@ namespace Assets.Scripts
                     if (lineRenderer.enabled)
                     {
                         lineRenderer.enabled = false;
+                        impactEffect.Stop();
+                        impactLight.enabled = false;
                     }
                 }
                 return;
@@ -111,11 +120,25 @@ namespace Assets.Scripts
         }
         void Laser()
         {
+
+            targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+            targetEnemy.Slow(slowAmount);
+
             if (!lineRenderer.enabled) { 
                 lineRenderer.enabled = true;
+                impactEffect.Play();
+                impactLight.enabled = true;
             }
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
+
+            Vector3 dir = firePoint.position - target.position;
+
+            impactEffect.transform.position = target.position + dir.normalized;
+
+            impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+
+
         }
     }
 }

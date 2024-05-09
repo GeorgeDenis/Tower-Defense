@@ -120,5 +120,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   health: 100
-  value: 50
+  worth: 50
   deathEffect: {fileID: 6954681894176810651, guid: db17d1498c5d6f749b665e940566cf68, type: 3}
+--- !u!114 &153492804544537091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8812670465086949200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b582ebbb028ad24d81c11927aac4062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
