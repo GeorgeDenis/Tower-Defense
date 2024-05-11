@@ -18,14 +18,14 @@ public class CameraController : MonoBehaviour
             this.enabled = false;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            doMovement = !doMovement;
-        }
-        if(!doMovement)
-        {
-            return;
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    doMovement = !doMovement;
+        //}
+        //if(!doMovement)
+        //{
+        //    return;
+        //}
         if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             transform.Translate(panSpeed * Time.deltaTime * Vector3.forward, Space.World);
