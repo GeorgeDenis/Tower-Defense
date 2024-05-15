@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
         Destroy(effect, 5f);
 
         Destroy(gameObject);
+        WaveSpawner.EnemiesAlive--;
     }
 
     public void Slow(float pct)
