@@ -390,7 +390,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   impactLight: {fileID: 0}
   damageOverTime: 30
-  slowAmount: 0.5
+  slowAmount: 0
   enemyTag: Enemy
   partToRotate: {fileID: 8391434496448791879}
   turnSpeed: 10

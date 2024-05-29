@@ -1284,21 +1284,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
-    count: 10
-    rate: 3
-  - enemy: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
-    count: 2
-    rate: 2
-  - enemy: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
-    count: 5
-    rate: 2
-  - enemy: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
-    count: 3
-    rate: 1
-  - enemy: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
-    count: 10
-    rate: 3
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 10
+      rate: 1.5
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 5
+      rate: 1
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 10
+      rate: 1.5
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 5
+      rate: 1
+  - enemyGroups:
+    - enemyPrefab: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      count: 3
+      rate: 0.5
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 10
+      rate: 1.5
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 10
+      rate: 1
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 15
+      rate: 1.5
+  - enemyGroups:
+    - enemyPrefab: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      count: 5
+      rate: 1
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 10
+      rate: 1
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 20
+      rate: 3
+    - enemyPrefab: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      count: 5
+      rate: 1
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 15
+      rate: 1
+    - enemyPrefab: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      count: 5
+      rate: 1
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 25
+      rate: 2.5
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 15
+      rate: 2
+  - enemyGroups:
+    - enemyPrefab: {fileID: 8665593226809536259, guid: bdb490b83e4a08545916b02aa6bfd537, type: 3}
+      count: 30
+      rate: 3
+    - enemyPrefab: {fileID: 8812670465086949200, guid: 8480a9a74bdb3bf4d825ebc5ad9a6a73, type: 3}
+      count: 15
+      rate: 2
+    - enemyPrefab: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      count: 10
+      rate: 1.5
   spawnPoint: {fileID: 347505965}
   timeBetweenWaves: 2
   waveCountdownText: {fileID: 2076094672}
@@ -1344,8 +1396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fe2b442ab0f03498bfdc85ee1e32ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
-  startLives: 1
+  startMoney: 300
+  startLives: 5
 --- !u!114 &134325657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20061,7 +20113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurret:
     prefab: {fileID: 8391434496279449722, guid: a4b651c9aa359c348b2df2f8e8c0735b, type: 3}
-    cost: 100
+    cost: 150
     upgradedPrefab: {fileID: 6760624840716023297, guid: 8734b99f7d2d54d4c960f578079363a5, type: 3}
     upgradeCost: 60
   missileLauncher:
@@ -20330,7 +20382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $100
+  m_text: $150
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c56b953a5b50ba41a7c17adc510f741, type: 2}
   m_sharedMaterial: {fileID: 6508094880095306352, guid: 2c56b953a5b50ba41a7c17adc510f741, type: 2}

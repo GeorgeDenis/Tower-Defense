@@ -3,6 +3,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
+    public int numberOfTurrets = 0;
 
     private void Awake()
     {

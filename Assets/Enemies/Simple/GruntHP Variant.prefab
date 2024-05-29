@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2373777092681295314, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 3}
       propertyPath: worth
-      value: 50
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2373777092681295314, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 3}
       propertyPath: m_Enabled
@@ -65,11 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2373777092681295314, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 3}
       propertyPath: startSpeed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2373777092681295314, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 3}
       propertyPath: startHealth
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad05534a7ba0dd49b8c54ce188308ec, type: 3}

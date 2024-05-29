@@ -41,23 +41,27 @@ public class WaveSpawner : MonoBehaviour
 
         waveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
+
     IEnumerator SpawnWave()
     {
-        
         PlayerStats.Rounds++;
-        
+
         Wave wave = waves[waveIndex];
 
-        EnemiesAlive = wave.count;
-
-        for (int i = 0; i < wave.count; i++)
+        foreach (var group in wave.enemyGroups)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            EnemiesAlive += group.count;
+
+            for (int i = 0; i < group.count; i++)
+            {
+                SpawnEnemy(group.enemyPrefab);
+                yield return new WaitForSeconds(1f / group.rate);
+            }
         }
 
         waveIndex++;
     }
+
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);

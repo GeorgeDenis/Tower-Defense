@@ -56,12 +56,18 @@ public class Node : MonoBehaviour
             Debug.Log("Not enough money to build that!");
             return;
         }
+        if (buildManager.numberOfTurrets > 20)
+        {
+            Debug.Log("You can't build more than 20 turrets!");
+            return;
+        }
         PlayerStats.Money -= blueprint.cost;
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
         turretBlueprint = blueprint;
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
+        buildManager.numberOfTurrets++;
         Debug.Log("Turret build!");
     }
 
@@ -91,6 +97,7 @@ public class Node : MonoBehaviour
         PlayerStats.Money += turretBlueprint.GetSellAmount();
         //GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         //Destroy(effect, 5f);
+        buildManager.numberOfTurrets--;
         Destroy(turret);
         turretBlueprint = null;
     }
