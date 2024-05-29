@@ -1382,6 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b1290ce25080c43914b444be0bf54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfTurrets: 0
   nodeUI: {fileID: 1019938697}
   buildEffect: {fileID: 7070321124723299429, guid: ac6e25d5190041f48b9da96f930a6acd, type: 3}
 --- !u!114 &134325656
